@@ -1,1 +1,57 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Bypasser Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>URL Bypasser Tool</h1>
+            <p>Bypass ad links and get direct download links</p>
+        </header>
+        
+        <main>
+            <form action="/bypass" method="POST">
+                <div class="form-group">
+                    <input type="url" name="url" placeholder="Enter URL to bypass" required>
+                    <button type="submit">Bypass</button>
+                </div>
+            </form>
+            
+            <div class="supported-services">
+                <h3>Supported Services:</h3>
+                <ul>
+                    <li>KatDrive</li>
+                    <li>HubDrive</li>
+                    <li>DriveFire</li>
+                    <li>MediaFire</li>
+                    <li>ZippyShare</li>
+                    <li>FileCrypt</li>
+                    <li>Dropbox</li>
+                    <li>Shareus</li>
+                    <li>Shorte</li>
+                    <li>Gofile</li>
+                    <li>Sharer.pw</li>
+                    <li>GDTot</li>
+                    <li>AdFly</li>
+                    <li>GPLinks</li>
+                    <li>Droplink</li>
+                    <li>Linkvertise</li>
+                    <li>OUO</li>
+                    <li>Mdisk</li>
+                    <li>Rocklinks</li>
+                    <li>And many more...</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <a href="/about">About</a>
+            <p>© 2023 URL Bypasser Tool</p>
+        </footer>
+    </div>
+</body>
+</html>
