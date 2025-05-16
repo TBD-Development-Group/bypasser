@@ -1,1 +1,46 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bypass Result</h1>
+        </header>
+        
+        <main>
+            <div class="result-box">
+                <div class="original-url">
+                    <h3>Original URL ({{ service }}):</h3>
+                    <a href="{{ original_url }}" target="_blank">{{ original_url }}</a>
+                </div>
+                
+                <div class="result-url">
+                    <h3>Bypassed URL:</h3>
+                    {% if result_url.startswith('http') %}
+                        <a href="{{ result_url }}" target="_blank">{{ result_url }}</a>
+                    {% else %}
+                        <p>{{ result_url }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="actions">
+                    <a href="/" class="btn">Bypass Another</a>
+                    {% if result_url.startswith('http') %}
+                        <a href="{{ result_url }}" class="btn" target="_blank">Open Link</a>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <a href="/about">About</a>
+            <p>© 2023 URL Bypasser Tool</p>
+        </footer>
+    </div>
+</body>
+</html>
