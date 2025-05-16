@@ -1,1 +1,23 @@
-
+services:
+  - type: web
+    name: bypasser-website
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: KATCRYPT
+        value: your_katdrive_crypt
+      - key: HCRYPT
+        value: your_hubdrive_crypt
+      - key: DCRYPT
+        value: your_drivefire_crypt
+      - key: KCRYPT
+        value: your_kolop_crypt
+      - key: LARAVEL_SESSION
+        value: your_sharer_pw_session
+      - key: XSRF_TOKEN
+        value: your_sharer_pw_xsrf_token
+      - key: GDTOT_CRYPT
+        value: your_gdtot_crypt
+      - key: FLASK_ENV
+        value: production
